@@ -20,6 +20,9 @@ dependencies:
   '@fullcalendar/timegrid':
     specifier: ^6.1.14
     version: 6.1.14(@fullcalendar/core@6.1.14)
+  '@hookform/resolvers':
+    specifier: ^3.9.0
+    version: 3.9.0(react-hook-form@7.52.1)
   '@nextui-org/button':
     specifier: ^2.0.34
     version: 2.0.34(@nextui-org/system@2.2.2)(@nextui-org/theme@2.2.6)(framer-motion@11.2.13)(react-dom@18.3.1)(react@18.3.1)
@@ -56,6 +59,12 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.3.1(react@18.3.1)
+  react-hook-form:
+    specifier: ^7.52.1
+    version: 7.52.1(react@18.3.1)
+  zod:
+    specifier: ^3.23.8
+    version: 3.23.8
 
 devDependencies:
   '@types/node':
@@ -231,6 +240,14 @@ packages:
     dependencies:
       '@fullcalendar/core': 6.1.14
       '@fullcalendar/daygrid': 6.1.14(@fullcalendar/core@6.1.14)
+    dev: false
+
+  /@hookform/resolvers@3.9.0(react-hook-form@7.52.1):
+    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.52.1(react@18.3.1)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -5127,6 +5144,15 @@ packages:
       scheduler: 0.23.2
     dev: false
 
+  /react-hook-form@7.52.1(react@18.3.1):
+    resolution: {integrity: sha512-uNKIhaoICJ5KQALYZ4TOaOLElyM+xipord+Ha3crEFhTntdLvWZqVY49Wqd/0GiVCA/f9NjemLeiNPjG7Hpurg==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    dependencies:
+      react: 18.3.1
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -5938,3 +5964,7 @@ packages:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+    dev: false
