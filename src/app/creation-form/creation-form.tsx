@@ -33,6 +33,7 @@ export const CreationForm = () => {
 
   const handleDateSelection = (selectedSlot: DateSelectArg) => {
     console.log('arg:', selectedSlot)
+    // todo add merging of events in case of being close to other event
     const newEvent: EventInput = {
       id: String(events.length + 1),
       start: selectedSlot.start,

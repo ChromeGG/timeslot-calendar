@@ -1,36 +1,9 @@
 import { useState } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
-
-type DurationOption = {
-  value: string
-  label: string
-}
-
-const durations: DurationOption[] = [
-  {
-    value: '00:15',
-    label: '15 minutes',
-  },
-  {
-    value: '00:30',
-    label: '30 minutes',
-  },
-  {
-    value: '01:00',
-    label: '1 hour',
-  },
-  {
-    value: '02:00',
-    label: '2 hours',
-  },
-  {
-    value: '03:00',
-    label: '3 hours',
-  },
-]
+import { durations, defaultDuration } from '../duration/duration-options'
 
 export const DurationSelect = () => {
-  const [duration, setDuration] = useState(durations[0].value)
+  const [duration, setDuration] = useState(defaultDuration.value)
 
   return (
     <div>
