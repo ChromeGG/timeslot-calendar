@@ -14,11 +14,11 @@ type Invitation = {
 }
 
 type InvitationPageProps = {
-  id: string
+  params: { id: string }
 }
 
-export default function InvitationPage({ id }: InvitationPageProps) {
-  console.log('invitation ID', id)
+export default function InvitationPage(props: InvitationPageProps) {
+  console.log('invitation ID', props)
   const [selected, useSelected] = useState()
   // TODO fetch by ID
   const invitation = {
