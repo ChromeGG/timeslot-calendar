@@ -1,15 +1,32 @@
 import { Input } from '@nextui-org/input'
-import { useState } from 'react'
+import { Control, Controller, useFormContext } from 'react-hook-form'
+import { CreationFormValues } from './creation-form'
 
-export const NameInput = () => {
-  const [name, setName] = useState('')
+type Props = {
+  control: Control<CreationFormValues>
+}
 
+export const NameInput = (props: Props) => {
   return (
-    <Input
-      label="Name of event"
-      isRequired
-      value={name}
-      onChange={(e) => setName(e.target.value)}
+    <Controller
+      name="name"
+      control={props.control}
+      render={({
+        field: { onChange, onBlur, value },
+        fieldState: { error, invalid },
+      }) => (
+        <>
+          <Input
+            label="Event name"
+            isRequired
+            value={value}
+            onBlur={onBlur}
+            onChange={onChange}
+            isInvalid={!!invalid}
+            errorMessage={error?.message}
+          />
+        </>
+      )}
     />
   )
 }

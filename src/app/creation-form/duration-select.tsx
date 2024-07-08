@@ -1,25 +1,38 @@
-import { useState } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
-import { durations, defaultDuration } from '../duration/duration-options'
+import { defaultDuration, durations } from '../duration/duration-options'
+import { Control, Controller } from 'react-hook-form'
+import { CreationFormValues } from './creation-form'
 
-export const DurationSelect = () => {
-  const [duration, setDuration] = useState(defaultDuration.value)
+type Props = {
+  control: Control<CreationFormValues>
+}
 
+export const DurationSelect = (props: Props) => {
   return (
-    <div>
-      <Select
-        isRequired
-        label="Duration of Event"
-        // className="max-w-xs" if we want to limit the width
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-      >
-        {durations.map((duration) => (
-          <SelectItem key={duration.value} value={duration.value}>
-            {duration.label}
-          </SelectItem>
-        ))}
-      </Select>
-    </div>
+    <Controller
+      name="duration"
+      control={props.control}
+      render={({
+        field: { onChange, onBlur, value },
+        fieldState: { error, invalid },
+      }) => (
+        <Select
+          isRequired
+          label="Event duration"
+          value={value}
+          defaultSelectedKeys={[defaultDuration.value]}
+          onChange={onChange}
+          onBlur={onBlur}
+          isInvalid={!!invalid}
+          errorMessage={error?.message}
+        >
+          {durations.map((duration) => (
+            <SelectItem key={duration.value} value={duration.value}>
+              {duration.label}
+            </SelectItem>
+          ))}
+        </Select>
+      )}
+    />
   )
 }
