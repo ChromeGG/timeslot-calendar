@@ -1,10 +1,10 @@
 import { Select, SelectItem } from '@nextui-org/select'
 import { defaultDuration, durations } from '../duration/duration-options'
 import { Control, Controller } from 'react-hook-form'
-import { CreationFormValues } from './creation-form'
+import { CreationForm } from './creation-form'
 
 type Props = {
-  control: Control<CreationFormValues>
+  control: Control<CreationForm>
 }
 
 export const DurationSelect = (props: Props) => {
@@ -21,7 +21,7 @@ export const DurationSelect = (props: Props) => {
           label="Event duration"
           value={value}
           defaultSelectedKeys={[defaultDuration.value]}
-          onChange={onChange}
+          onChange={onChange} // todo onChange should check if value decreased -> show modal that this will remove time slots shorter than new duration
           onBlur={onBlur}
           isInvalid={!!invalid}
           errorMessage={error?.message}

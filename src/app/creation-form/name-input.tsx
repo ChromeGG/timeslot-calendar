@@ -1,9 +1,9 @@
 import { Input } from '@nextui-org/input'
-import { Control, Controller, useFormContext } from 'react-hook-form'
-import { CreationFormValues } from './creation-form'
+import { Control, Controller } from 'react-hook-form'
+import { CreationForm } from './creation-form'
 
 type Props = {
-  control: Control<CreationFormValues>
+  control: Control<CreationForm>
 }
 
 export const NameInput = (props: Props) => {
